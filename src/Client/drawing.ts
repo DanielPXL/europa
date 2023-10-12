@@ -80,4 +80,17 @@ export default class Drawer {
 				throw new Error("Unknown geometry type: " + (geometry as any).type);
 		}
 	}
+
+	moveCamera(delta: number[]) {
+		this.cameraPos[0] -= delta[0] / window.innerWidth / this.zoom;
+		this.cameraPos[1] -= delta[1] / window.innerWidth / this.zoom;
+	}
+
+	zoomTo(mouse: number[], deltaY: number) {
+		const [x, y] = this.inverseCameraTransform(mouse);
+		this.zoom *= Math.pow(1.1, -deltaY / 100);
+		const [x2, y2] = this.cameraTransform([x, y]);
+		this.cameraPos[0] += (x2 - mouse[0]) / window.innerWidth / this.zoom;
+		this.cameraPos[1] += (y2 - mouse[1]) / window.innerWidth / this.zoom
+	}
 }

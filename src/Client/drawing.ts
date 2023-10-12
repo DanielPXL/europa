@@ -33,9 +33,19 @@ export default class Drawer {
 		const [cx, cy] = this.cameraPos;
 
 		return [
-			(x - cx) * this.zoom * window.innerWidth + window.innerWidth / 2,
-			(y - cy) * this.zoom * window.innerWidth + window.innerHeight / 2
-		]
+			(x - cx) * this.zoom * window.innerWidth,
+			(y - cy) * this.zoom * window.innerWidth
+		];
+	}
+
+	inverseCameraTransform(point: number[]): number[] {
+		const [x, y] = point;
+		const [cx, cy] = this.cameraPos;
+
+		return [
+			x / this.zoom / window.innerWidth + cx,
+			y / this.zoom / window.innerWidth + cy
+		];
 	}
 
 	drawPolygon(points: number[][]) {

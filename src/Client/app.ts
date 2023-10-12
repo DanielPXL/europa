@@ -40,7 +40,11 @@ async function main() {
 	});
 
 	canvas.addEventListener("wheel", e => {
+		const [x, y] = drawer.inverseCameraTransform([e.clientX, e.clientY]);
 		drawer.zoom *= Math.pow(1.1, -e.deltaY / 100);
+		const [x2, y2] = drawer.cameraTransform([x, y]);
+		drawer.cameraPos[0] += (x2 - e.clientX) / window.innerWidth / drawer.zoom;
+		drawer.cameraPos[1] += (y2 - e.clientY) / window.innerWidth / drawer.zoom;
 	});
 
 	function draw() {

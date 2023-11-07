@@ -11,7 +11,7 @@ async function convert(path) {
 		countries: []
 	};
 
-	for (const country of europeanCountries) {
+	for (const country of geoJson.features) {
 		newJson.countries.push({
 			name: country.properties.NAME_DE,
 			iso: country.properties.ISO_A3,

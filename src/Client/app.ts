@@ -1,3 +1,6 @@
+import * as Three from "three";
+import * as Geo from "./geo";
+import { POI } from "./poi";
 import Drawer from "./drawing";
 
 async function main() {
@@ -10,7 +13,14 @@ async function main() {
 	// console.log(countries);
 
 	for (const country of countries.countries) {
-		drawer.addCountry(country.geometry);
+		Geo.addCountry(country.geometry, drawer.addLine.bind(drawer));
+	}
+
+	const pois = await fetch("pois.json").then(r => r.json()) as POI[];
+	for (const poi of pois) {
+		const [x, y] = Geo.mercatorProject([poi.lon, poi.lat]);
+		const point = new Three.Vector3(x, y, -1);
+		drawer.addCircle(point, 0.001);
 	}
 
 	let clickedStart: number[] = null;
@@ -23,10 +33,10 @@ async function main() {
 	});
 
 	document.addEventListener("mousemove", e => {
-		console.log(drawer.cameraTransform(drawer.inverseCameraTransform([e.clientX, e.clientY])));
+		// console.log(drawer.cameraTransform(drawer.inverseCameraTransform([e.clientX, e.clientY])));
 		if (clickedStart) {
 			const [x, y] = clickedStart;
-			const delta = [e.clientX - x, e.clientY - y];
+			const delta = new Three.Vector2(e.clientX - x, e.clientY - y);
 
 			drawer.moveCamera(delta);
 
@@ -35,7 +45,7 @@ async function main() {
 	});
 
 	document.addEventListener("wheel", e => {
-		drawer.zoomTo([e.clientX, e.clientY], e.deltaY);
+		drawer.zoomTo(new Three.Vector3(e.clientX, e.clientY), e.deltaY);
 	});
 
 	function draw() {

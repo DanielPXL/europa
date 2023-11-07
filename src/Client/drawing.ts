@@ -1,10 +1,16 @@
 import * as Three from "three";
+import { POI, POIInfo } from "./poi";
 
 export default class Drawer {
 	constructor() {
 		this.scene = new Three.Scene();
 		const aspect = window.innerHeight / window.innerWidth;
 		this.camera = new Three.OrthographicCamera(-1, 1, aspect, -aspect, 0.1, 100);
+
+		this.lineParent = new Three.Object3D();
+		this.scene.add(this.lineParent);
+		this.poiParent = new Three.Object3D();
+		this.scene.add(this.poiParent);
 		
 		this.renderer = new Three.WebGLRenderer({
 			antialias: true
@@ -19,13 +25,25 @@ export default class Drawer {
 			color: 0x000000,
 			linewidth: 1
 		});
+
+		// POI dot found on https://fontawesome.com/icons/location-dot?f=classic&s=solid
+		const poiDot = new Three.TextureLoader().load("poidot.png");
+		this.poiMaterial = new Three.SpriteMaterial({
+			map: poiDot,
+			color: 0xAA0000
+		});
 	}
 
 	scene: Three.Scene;
 	camera: Three.OrthographicCamera;
 	renderer: Three.WebGLRenderer;
 
+	lineParent: Three.Object3D;
+	poiParent: Three.Object3D;
+	pois: POI[] = [];
+
 	lineMaterial: Three.LineBasicMaterial;
+	poiMaterial: Three.SpriteMaterial;
 
 	zoom = 1;
 
@@ -38,15 +56,19 @@ export default class Drawer {
 	addLine(points: Three.Vector3[]) {
 		const geometry = new Three.BufferGeometry().setFromPoints(points);
 		const line = new Three.Line(geometry, this.lineMaterial);
-		this.scene.add(line);
+		this.lineParent.add(line);
 	}
 
-	addCircle(point: Three.Vector3, radius: number) {
-		const geometry = new Three.CircleGeometry(radius, 32);
-		const material = new Three.MeshBasicMaterial({ color: 0xFF0000 });
-		const circle = new Three.Mesh(geometry, material);
-		circle.position.copy(point);
-		this.scene.add(circle);
+	addPOI(pos: Three.Vector3, poi: POIInfo) {
+		const sprite = new Three.Sprite(this.poiMaterial);
+		sprite.position.copy(pos);
+
+		this.poiParent.add(sprite);
+		this.pois.push({
+			sprite,
+			info: poi,
+			realPos: new Three.Vector2(pos.x, pos.y)
+		});
 	}
 
 	updateCameraZoom() {
@@ -56,6 +78,17 @@ export default class Drawer {
 		this.camera.top = aspect / this.zoom;
 		this.camera.bottom = -aspect / this.zoom;
 		this.camera.updateProjectionMatrix();
+
+		const poiSize = 0.06;
+		for (const poi of this.pois) {
+			poi.sprite.scale.set(poiSize / this.zoom * 384 / 512, poiSize / this.zoom, 1);
+			poi.sprite.position.y = poi.realPos.y + poiSize / (2 * this.zoom);
+		}
+	}
+
+	resize(width: number, height: number) {
+		this.renderer.setSize(width, height);
+		this.updateCameraZoom();
 	}
 
 	cameraTransform(point: Three.Vector3): Three.Vector3 {

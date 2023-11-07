@@ -1,10 +1,9 @@
 import * as Three from "three";
 import * as Geo from "./geo";
-import { POI } from "./poi";
+import { POIInfo, findNearestPOI } from "./poi";
 import Drawer from "./drawing";
 
 async function main() {
-	// window.addEventListener("resize", resizeCanvas, false);
 	// resizeCanvas();
 
 	const drawer = new Drawer();
@@ -13,15 +12,21 @@ async function main() {
 	// console.log(countries);
 
 	for (const country of countries.countries) {
-		Geo.addCountry(country.geometry, drawer.addLine.bind(drawer));
+		Geo.addCountry(country.geometry, (points) => {
+			drawer.addLine(points);
+		});
 	}
 
-	const pois = await fetch("pois.json").then(r => r.json()) as POI[];
+	const pois = await fetch("pois.json").then(r => r.json()) as POIInfo[];
 	for (const poi of pois) {
 		const [x, y] = Geo.mercatorProject([poi.lon, poi.lat]);
-		const point = new Three.Vector3(x, y, -1);
-		drawer.addCircle(point, 0.001);
+		const pos = new Three.Vector3(x, y, 1);
+		drawer.addPOI(pos, poi);
 	}
+
+	window.addEventListener("resize", () => {
+		drawer.resize(window.innerWidth, window.innerHeight);
+	}, false);
 
 	let clickedStart: number[] = null;
 	document.addEventListener("mousedown", e => {
@@ -33,7 +38,6 @@ async function main() {
 	});
 
 	document.addEventListener("mousemove", e => {
-		// console.log(drawer.cameraTransform(drawer.inverseCameraTransform([e.clientX, e.clientY])));
 		if (clickedStart) {
 			const [x, y] = clickedStart;
 			const delta = new Three.Vector2(e.clientX - x, e.clientY - y);
@@ -41,6 +45,15 @@ async function main() {
 			drawer.moveCamera(delta);
 
 			clickedStart = [e.clientX, e.clientY];
+		}
+
+		const t = drawer.inverseCameraTransform(new Three.Vector3(e.clientX, e.clientY, 0));
+		const nearest = findNearestPOI(drawer.pois, t.x, t.y);
+		const nearestDist = Math.sqrt((nearest.sprite.position.x - t.x) ** 2 + (nearest.sprite.position.y - t.y) ** 2);
+
+		// console.log("Mouse: ", t.x, t.y, "Nearest: ", nearest.sprite.position.x, nearest.sprite.position.y, nearestDist);
+		if (nearestDist < 0.1) {
+			console.log("Hit!");
 		}
 	});
 

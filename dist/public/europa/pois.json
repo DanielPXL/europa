@@ -2,11 +2,31 @@
 	{
 		"name": "Test!",
 		"lat": 53.5341191,
-		"lon": 8.1336471
+		"lon": 8.1336471,
+		"imageURLs": [
+			"test.jpg"
+		],
+		"content": "# Markdown test!\n\n*It works!*\n\n**Test**\n\n***Test***\n\n~~Test~~\n\n> Test\n\n`Test`\n\n```Test```"
 	},
 	{
 		"name": "Rom",
 		"lat": 41.902644733045875,
-		"lon": 12.496438260058852
+		"lon": 12.496438260058852,
+		"imageURLs": [
+			"test.jpg",
+			"test.jpg"
+		],
+		"content": "Rom ist die Hauptstadt Italiens. Sie liegt in der Region Latium an den Ufern des Flusses Tiber. Rom war als Hauptstadt des Römischen Reiches und der Nachfolgestaaten bis 1870 politisches, wirtschaftliches und kulturelles Zentrum Europas. Die Stadt ist eine der bedeutendsten Metropolen der Welt und Zentrum des römisch-katholischen Christentums. Seit 1980 gehört die historische Altstadt zum UNESCO-Welterbe."
+	},
+	{
+		"name": "Türkei",
+		"lat": 39.22401858148953, 
+		"lon": 35.08045237117598,
+		"imageURLs": [
+			"img/turkey/1.jpg",
+			"img/turkey/2.jpg",
+			"img/turkey/3.jpg"
+		],
+		"content": "Die Türkei hat aufgrund ihrer Nichtmitgliedschaft in der Europäischen Union (EU) mit verschiedenen Nachteilen zu kämpfen. Zunächst einmal gibt es wirtschaftliche Nachteile. Obwohl die Türkei eine Zollunion mit der EU unterhält, hat sie keinen vollen Zugang zum EU-Binnenmarkt. \n\nAls EU-Mitglied könnte die Türkei von den wirtschaftlichen Vorteilen, wie freiem Handel und Investitionen, stärker profitieren. Darüber hinaus bestehen politische Spannungen zwischen der Türkei und der EU, insbesondere in Bezug auf demokratische Werte, Menschenrechte und die türkische Innenpolitik.\n\nDies hat zu diplomatischen Konflikten geführt. Die Visumfreiheit ist ein weiterer Nachteil, da türkische Staatsbürger oft Visa für Reisen in die EU benötigen. Dies stellt eine Hürde für Reisen und Geschäftstreffen dar. Politisch ist die Türkei als Nichtmitglied von einigen EU-Entscheidungen und Diskussionen ausgeschlossen, was zu einer gewissen politischen Isolation führt.\n\nAußerdem erhält die Türkei keine finanzielle Unterstützung aus EU-Fonds und Strukturhilfen, die den Mitgliedstaaten zugutekommen. Schließlich müsste die Türkei als EU-Mitglied ihre Gesetzgebung und Standards an EU-Vorgaben anpassen, was Souveränitätseinschränkungen mit sich bringen würde."
 	}
 ]

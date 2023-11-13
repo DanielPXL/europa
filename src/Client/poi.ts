@@ -1,9 +1,12 @@
 import * as Three from "three";
+import Drawer from "./drawing";
 
 export interface POIInfo {
 	name: string;
 	lat: number;
 	lon: number;
+	imageURLs: string[];
+	content: string;
 }
 
 export interface POI {
@@ -28,4 +31,13 @@ export function findNearestPOI(pois: POI[], x: number, y: number) {
 	}
 
 	return nearest;
+}
+
+export function checkClientCollision(drawer: Drawer, x: number, y: number) {
+	const t = drawer.inverseCameraTransform(new Three.Vector3(x, y, 0));
+	const nearest = findNearestPOI(drawer.pois, t.x, t.y);
+	const clientPos = drawer.cameraTransform(nearest.sprite.position);
+	const nearestDist = Math.sqrt((clientPos.x - x) ** 2 + (clientPos.y - y) ** 2);
+	
+	return { hit: nearestDist < 25, nearest, clientPos };
 }

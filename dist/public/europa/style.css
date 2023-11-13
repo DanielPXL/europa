@@ -41,6 +41,13 @@ body {
 	margin: 18px;
 }
 
+#poi-image-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	height: 250px;
+	overflow: hidden;
+}
+
 #poi-hover-title {
 	position: absolute;
 	background: gainsboro;

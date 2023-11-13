@@ -118,6 +118,8 @@ async function main() {
 			}
 	}
 
+	let mousePos: THREE.Vector2 = new Three.Vector2();
+
 	document.addEventListener("mousemove", e => {
 		if (focusState === "map") {
 			if (clickedStart) {
@@ -128,22 +130,22 @@ async function main() {
 	
 				clickedStart = [e.clientX, e.clientY];
 			}
-	
-			updatePOImarker(e.clientX, e.clientY);
 		}
+
+		mousePos.x = e.clientX;
+		mousePos.y = e.clientY;
 	});
 
 	document.addEventListener("wheel", e => {
 		if (focusState === "map") {
 			drawer.zoomTo(new Three.Vector3(e.clientX, e.clientY), e.deltaY);
-
-			updatePOImarker(e.clientX, e.clientY);
 		}
 	});
 
 	function draw() {
 		if (focusState === "map") {
 			drawer.draw();
+			updatePOImarker(mousePos.x, mousePos.y);
 		}
 
 		requestAnimationFrame(draw);

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%; width: 100%;">
+<head>
+	<meta charset="UTF-8">
+	<title>Edit</title>
+</head>
+<body style="height: 100%; width: 100%;">
+	<div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; height: calc(100% - 16px); width: 100%;">
+		<div style="grid-row: 1; grid-column: 1;">
+			<textarea id="textArea" style="width: calc(100% - 32px); height: calc(100% - 16px); resize: none;"></textarea>
+		</div>
+		<div style="grid-row: 1; grid-column: 2;">
+			<textarea id="output" readonly style="width: calc(100% - 32px); height: calc(100% - 16px); resize: none;"></textarea>
+		</div>
+	</div>
+
+	<script>
+		const textArea = document.getElementById('textArea');
+		const output = document.getElementById('output');
+
+		textArea.addEventListener('input', () => {
+			// Change every new line to \n, every tab to \t etc. 
+			let str = "";
+
+			for (let i = 0; i < textArea.value.length; i++) {
+				let char = textArea.value[i];
+
+				if (char === '\n') {
+					str += '\\n';
+				} else if (char === '\t') {
+					str += '\\t';
+				} else if (char === '\r') {
+					str += '\\r';
+				} else if (char === '\v') {
+					str += '\\v';
+				} else if (char === '\b') {
+					str += '\\b';
+				} else if (char === '\f') {
+					str += '\\f';
+				} else if (char === '\0') {
+					str += '\\0';
+				} else if (char === '\\') {
+					str += '\\\\';
+				} else {
+					str += char;
+				}
+			}
+
+			output.innerText = str;
+		});
+	</script>
+</body>
+</html>

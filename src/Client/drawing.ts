@@ -92,8 +92,8 @@ export default class Drawer {
 	}
 
 	cameraTransform(point: Three.Vector3): Three.Vector3 {
-
 		const t = point
+			.clone()
 			.applyMatrix4(this.camera.matrixWorldInverse)
 			.applyMatrix4(this.camera.projectionMatrix);
 

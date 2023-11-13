@@ -4,8 +4,9 @@ import { POIInfo, findNearestPOI } from "./poi";
 import Drawer from "./drawing";
 
 async function main() {
-	// resizeCanvas();
+	const poiHoverTitle = document.getElementById("poi-hover-title") as HTMLDivElement;
 
+	let focusState: "map" | "poi" = "map";
 	const drawer = new Drawer();
 
 	const countries = await fetch("countries.json").then(r => r.json());
@@ -38,31 +39,49 @@ async function main() {
 	});
 
 	document.addEventListener("mousemove", e => {
-		if (clickedStart) {
-			const [x, y] = clickedStart;
-			const delta = new Three.Vector2(e.clientX - x, e.clientY - y);
+		if (focusState === "map") {
+			if (clickedStart) {
+				const [x, y] = clickedStart;
+				const delta = new Three.Vector2(e.clientX - x, e.clientY - y);
+	
+				drawer.moveCamera(delta);
+	
+				clickedStart = [e.clientX, e.clientY];
+			}
+	
+			const t = drawer.inverseCameraTransform(new Three.Vector3(e.clientX, e.clientY, 0));
+			const nearest = findNearestPOI(drawer.pois, t.x, t.y);
+			const clientPos = drawer.cameraTransform(nearest.sprite.position);
+			const nearestDist = Math.sqrt((clientPos.x - e.clientX) ** 2 + (clientPos.y - e.clientY) ** 2);
+	
+			// console.log("Mouse: ", e.clientX, e.clientY, "Nearest: ", clientPos.x, clientPos.y, nearestDist);
+			if (nearestDist < 25) {
+				// console.log("Hit!");
+				document.body.style.cursor = "pointer";
+				
+				poiHoverTitle.innerHTML = nearest.info.name;
 
-			drawer.moveCamera(delta);
+				poiHoverTitle.style.display = "block";
+				poiHoverTitle.style.left = `${clientPos.x + 30}px`;
+				poiHoverTitle.style.top = `${clientPos.y - 20}px`;
+			} else {
+				document.body.style.cursor = "default";
 
-			clickedStart = [e.clientX, e.clientY];
-		}
-
-		const t = drawer.inverseCameraTransform(new Three.Vector3(e.clientX, e.clientY, 0));
-		const nearest = findNearestPOI(drawer.pois, t.x, t.y);
-		const nearestDist = Math.sqrt((nearest.sprite.position.x - t.x) ** 2 + (nearest.sprite.position.y - t.y) ** 2);
-
-		// console.log("Mouse: ", t.x, t.y, "Nearest: ", nearest.sprite.position.x, nearest.sprite.position.y, nearestDist);
-		if (nearestDist < 0.1) {
-			console.log("Hit!");
+				poiHoverTitle.style.display = "none";
+			}
 		}
 	});
 
 	document.addEventListener("wheel", e => {
-		drawer.zoomTo(new Three.Vector3(e.clientX, e.clientY), e.deltaY);
+		if (focusState === "map") {
+			drawer.zoomTo(new Three.Vector3(e.clientX, e.clientY), e.deltaY);
+		}
 	});
 
 	function draw() {
-		drawer.draw();
+		if (focusState === "map") {
+			drawer.draw();
+		}
 
 		requestAnimationFrame(draw);
 	}

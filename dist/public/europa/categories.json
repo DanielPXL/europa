@@ -1,0 +1,14 @@
+[
+	{
+		"displayName": "Test Category 1",
+		"name": "test1",
+		"color": "#ee2222",
+		"selColor": "#aa1111"
+	},
+	{
+		"displayName": "Test Category 2!!!",
+		"name": "test2",
+		"color": "#22ee22",
+		"selColor": "#11aa11"
+	}
+]

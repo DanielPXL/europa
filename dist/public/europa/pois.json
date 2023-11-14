@@ -1,15 +1,17 @@
 [
 	{
 		"name": "Test!",
+		"category": "test1",
 		"lat": 53.5341191,
 		"lon": 8.1336471,
 		"imageURLs": [
 			"test.jpg"
 		],
-		"content": "# Markdown test!\n\n*It works!*\n\n**Test**\n\n***Test***\n\n~~Test~~\n\n> Test\n\n`Test`\n\n```Test```"
+		"content": "# Markdown test!\n\n*Test!*\n\n**Test**\n\n***Test***\n\n~~Test~~\n\n> Test\n\n`Test`\n\n```Test```"
 	},
 	{
 		"name": "Rom",
+		"category": "test2",
 		"lat": 41.902644733045875,
 		"lon": 12.496438260058852,
 		"imageURLs": [
@@ -20,6 +22,7 @@
 	},
 	{
 		"name": "Türkei",
+		"category": "test1",
 		"lat": 39.22401858148953, 
 		"lon": 35.08045237117598,
 		"imageURLs": [

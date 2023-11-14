@@ -1,8 +1,15 @@
 import * as Three from "three";
 import Drawer from "./drawing";
 
+export interface Category {
+	displayName: string;
+	name: string;
+	color: string;
+}
+
 export interface POIInfo {
 	name: string;
+	category: string;
 	lat: number;
 	lon: number;
 	imageURLs: string[];

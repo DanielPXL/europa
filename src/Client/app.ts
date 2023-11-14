@@ -1,6 +1,6 @@
 import * as Three from "three";
 import * as Geo from "./geo";
-import { POIInfo, checkClientCollision, findNearestPOI } from "./poi";
+import { Category, POIInfo, checkClientCollision, findNearestPOI } from "./poi";
 import Drawer from "./drawing";
 import { marked } from "marked";
 
@@ -9,6 +9,8 @@ async function main() {
 	const poiContent = document.getElementById("poi-content") as HTMLDivElement;
 	const poiImageContainer = document.getElementById("poi-image-container") as HTMLDivElement;
 	const poiContentText = document.getElementById("poi-content-text") as HTMLDivElement;
+	const categoriesDiv = document.getElementById("categories") as HTMLDivElement;
+	const categoryContainer = document.getElementById("category-container") as HTMLDivElement;
 
 	let focusState: "map" | "poi" = "map";
 	const drawer = new Drawer();
@@ -18,8 +20,47 @@ async function main() {
 
 	for (const country of countries.countries) {
 		Geo.addCountry(country.geometry, (points) => {
-			drawer.addLine(points);
+			drawer.addLine(points, country.isEuropean);
 		});
+	}
+
+	const categories = await fetch("categories.json").then(r => r.json()) as Category[];
+	let catItemLists: { [category: string]: HTMLDivElement } = {};
+	for (const category of categories) {
+		drawer.addPOICategory(category);
+
+		const categoryDiv = document.createElement("div");
+		categoryDiv.className = "category";
+		const categoryTitle = document.createElement("button");
+		categoryTitle.className = "category-title";
+		categoryTitle.innerHTML = category.displayName;
+		categoryDiv.appendChild(categoryTitle);
+		const categoryItemList = document.createElement("div");
+		categoryItemList.className = "category-item-list";
+		categoryDiv.appendChild(categoryItemList);
+		catItemLists[category.name] = categoryItemList;
+
+		categoryTitle.addEventListener("click", () => {
+			const wasActive = categoryItemList.classList.contains("active");
+
+			for (const cat of Object.values(catItemLists)) {
+				cat.style.maxHeight = "0px";
+				cat.classList.remove("active");
+			}
+
+			if (!wasActive) {
+				categoryItemList.style.maxHeight = `${categoryItemList.scrollHeight}px`;
+				categoryItemList.classList.add("active");
+
+				drawer.showCategoryOnly(category.name);
+			} else {
+				categoryItemList.style.maxHeight = "0px";
+				categoryItemList.classList.remove("active");
+				drawer.showAllCategories();
+			}
+		});
+
+		categoriesDiv.appendChild(categoryDiv);
 	}
 
 	const pois = await fetch("pois.json").then(r => r.json()) as POIInfo[];
@@ -27,6 +68,16 @@ async function main() {
 		const [x, y] = Geo.mercatorProject([poi.lon, poi.lat]);
 		const pos = new Three.Vector3(x, y, 1);
 		drawer.addPOI(pos, poi);
+		
+		const item = document.createElement("button");
+		item.className = "category-item";
+		item.innerHTML = poi.name;
+
+		item.addEventListener("click", () => {
+			showContent(poi);
+		});
+
+		catItemLists[poi.category].appendChild(item);
 	}
 
 	let imageContainers: HTMLDivElement[];
@@ -62,6 +113,7 @@ async function main() {
 		focusState = "poi";
 		document.body.style.cursor = "";
 		poiHoverTitle.style.display = "none";
+		categoryContainer.style.display = "none";
 
 		poiContent.style.display = "block";
 		updateContentImages(poi.imageURLs);
@@ -72,6 +124,7 @@ async function main() {
 	function hideContent() {
 		focusState = "map";
 		poiContent.style.display = "none";
+		categoryContainer.style.display = "block";
 	}
 
 	window.addEventListener("resize", () => {

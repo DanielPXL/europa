@@ -1,5 +1,5 @@
 import * as Three from "three";
-import { POI, POIInfo } from "./poi";
+import { Category, POI, POIInfo } from "./poi";
 
 export default class Drawer {
 	constructor() {
@@ -22,16 +22,17 @@ export default class Drawer {
 		this.camera.position.z = 5;
 
 		this.lineMaterial = new Three.LineBasicMaterial({
+			color: 0xAAAAAA,
+			linewidth: 1
+		});
+
+		this.lineMaterialEurope = new Three.LineBasicMaterial({
 			color: 0x000000,
 			linewidth: 1
 		});
 
 		// POI dot found on https://fontawesome.com/icons/location-dot?f=classic&s=solid
-		const poiDot = new Three.TextureLoader().load("poidot.png");
-		this.poiMaterial = new Three.SpriteMaterial({
-			map: poiDot,
-			color: 0xAA0000
-		});
+		this.poiDot = new Three.TextureLoader().load("poidot.png");
 	}
 
 	scene: Three.Scene;
@@ -43,7 +44,10 @@ export default class Drawer {
 	pois: POI[] = [];
 
 	lineMaterial: Three.LineBasicMaterial;
-	poiMaterial: Three.SpriteMaterial;
+	lineMaterialEurope: Three.LineBasicMaterial;
+
+	poiDot: Three.Texture;
+	poiMaterials: { [category: string]: Three.SpriteMaterial } = {};
 
 	zoom = 1;
 
@@ -53,14 +57,21 @@ export default class Drawer {
 		this.renderer.render(this.scene, this.camera);
 	}
 
-	addLine(points: Three.Vector3[]) {
+	addLine(points: Three.Vector3[], isEuropean: boolean) {
 		const geometry = new Three.BufferGeometry().setFromPoints(points);
-		const line = new Three.Line(geometry, this.lineMaterial);
+		const line = new Three.Line(geometry, isEuropean ? this.lineMaterialEurope : this.lineMaterial);
 		this.lineParent.add(line);
 	}
 
+	addPOICategory(category: Category) {
+		this.poiMaterials[category.name] = new Three.SpriteMaterial({
+			map: this.poiDot,
+			color: category.color
+		});
+	}
+
 	addPOI(pos: Three.Vector3, poi: POIInfo) {
-		const sprite = new Three.Sprite(this.poiMaterial);
+		const sprite = new Three.Sprite(this.poiMaterials[poi.category]);
 		sprite.position.copy(pos);
 
 		this.poiParent.add(sprite);
@@ -71,6 +82,19 @@ export default class Drawer {
 		});
 	}
 
+	showCategoryOnly(category: string) {
+		for (const poi of this.pois) {
+			poi.sprite.visible = poi.info.category === category;
+		}
+	}
+
+	showAllCategories() {
+		for (const poi of this.pois) {
+			poi.sprite.visible = true;
+		}
+	
+	}
+
 	updateCameraZoom() {
 		const aspect = window.innerHeight / window.innerWidth;
 		this.camera.left = -1 / this.zoom;
@@ -79,7 +103,7 @@ export default class Drawer {
 		this.camera.bottom = -aspect / this.zoom;
 		this.camera.updateProjectionMatrix();
 
-		const poiSize = 0.06;
+		const poiSize = 0.045 / (window.innerWidth / 1920);
 		for (const poi of this.pois) {
 			poi.sprite.scale.set(poiSize / this.zoom * 384 / 512, poiSize / this.zoom, 1);
 			poi.sprite.position.y = poi.realPos.y + poiSize / (2 * this.zoom);

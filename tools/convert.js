@@ -15,7 +15,8 @@ async function convert(path) {
 		newJson.countries.push({
 			name: country.properties.NAME_DE,
 			iso: country.properties.ISO_A3,
-			geometry: country.geometry
+			geometry: country.geometry,
+			isEuropean: country.properties.CONTINENT === "Europe"
 		});
 	}
 

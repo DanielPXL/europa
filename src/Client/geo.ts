@@ -14,38 +14,49 @@ export function mercatorProject(point: number[]): number[] {
 	]
 }
 
+export type BufferPointer = { pointer: number, length: number}
+
 export type CountryGeometry = {
 	type: "Polygon",
-	coordinates: number[][][]
+	coordinates: BufferPointer
 } | {
 	type: "MultiPolygon",
-	coordinates: number[][][][]
+	coordinates: BufferPointer[]
 }
 
-function addPolygon(points: number[][], callback: (points: Three.Vector3[]) => void) {
+function addPolygon(points: BufferPointer, coordBuffer: Float32Array, callback: (points: Three.Vector3[]) => void) {
 	const vertices = [];
 
-	for (const point of points) {
-		const [x, y] = mercatorProject(point);
-		vertices.push(new Three.Vector3(x, y, 0));
+	// for (const point of points) {
+	// 	const [x, y] = mercatorProject(point);
+	// 	vertices.push(new Three.Vector3(x, y, 0));
+	// }
+
+	for (let i = points.pointer; i < points.pointer + points.length; i += 2) {
+		const x = coordBuffer[i];
+		const y = coordBuffer[i + 1];
+
+		const [projX, projY] = mercatorProject([x, y]);
+
+		vertices.push(new Three.Vector3(projX, projY, 0));
 	}
 
 	callback(vertices);
 }
 
-function addMultiPolygon(polygons: number[][][][], callback: (points: Three.Vector3[]) => void) {
+function addMultiPolygon(polygons: BufferPointer[], coordBuffer: Float32Array, callback: (points: Three.Vector3[]) => void) {
 	for (const polygon of polygons) {
-		addPolygon(polygon[0], callback);
+		addPolygon(polygon, coordBuffer, callback);
 	}
 }
 
-export function addCountry(geometry: CountryGeometry, callback: (points: Three.Vector3[]) => void) {
+export function addCountry(geometry: CountryGeometry, coordBuffer: Float32Array, callback: (points: Three.Vector3[]) => void) {
 	switch (geometry.type) {
 		case "Polygon":
-			addPolygon(geometry.coordinates[0], callback);
+			addPolygon(geometry.coordinates, coordBuffer, callback);
 			break
 		case "MultiPolygon":
-			addMultiPolygon(geometry.coordinates, callback);
+			addMultiPolygon(geometry.coordinates, coordBuffer, callback);
 			break
 		default:
 			throw new Error("Unknown geometry type: " + (geometry as any).type);

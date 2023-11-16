@@ -4,7 +4,13 @@ import { Category, POIInfo, checkClientCollision, findNearestPOI } from "./poi";
 import Drawer from "./drawing";
 import { marked } from "marked";
 
+const countriesMapProm = fetch("countriesMap.json").then(r => r.json());
+const countriesProm = fetch("countries.bin").then(r => r.arrayBuffer());
+const categoriesProm = fetch("categories.json").then(r => r.json()) as Promise<Category[]>;
+const poisProm = fetch("pois.json").then(r => r.json()) as Promise<POIInfo[]>;
+
 async function main() {
+	console.log("Hello world!");
 	const poiHoverTitle = document.getElementById("poi-hover-title") as HTMLDivElement;
 	const poiContent = document.getElementById("poi-content") as HTMLDivElement;
 	const poiImageContainer = document.getElementById("poi-image-container") as HTMLDivElement;
@@ -15,16 +21,28 @@ async function main() {
 	let focusState: "map" | "poi" = "map";
 	const drawer = new Drawer();
 
-	const countries = await fetch("countries.json").then(r => r.json());
+	const [
+		countriesMap,
+		countries,
+		categories,
+		pois
+	] = await Promise.all([
+		countriesMapProm,
+		countriesProm,
+		categoriesProm,
+		poisProm
+	]);
+
 	// console.log(countries);
 
-	for (const country of countries.countries) {
-		Geo.addCountry(country.geometry, (points) => {
+	const coordBuffer = new Float32Array(countries);
+
+	for (const country of countriesMap.countries) {
+		Geo.addCountry(country.geometry, coordBuffer, (points) => {
 			drawer.addLine(points, country.isEuropean);
 		});
 	}
 
-	const categories = await fetch("categories.json").then(r => r.json()) as Category[];
 	let catItemLists: { [category: string]: HTMLDivElement } = {};
 	for (const category of categories) {
 		drawer.addPOICategory(category);
@@ -63,7 +81,6 @@ async function main() {
 		categoriesDiv.appendChild(categoryDiv);
 	}
 
-	const pois = await fetch("pois.json").then(r => r.json()) as POIInfo[];
 	for (const poi of pois) {
 		const [x, y] = Geo.mercatorProject([poi.lon, poi.lat]);
 		const pos = new Three.Vector3(x, y, 1);
@@ -207,4 +224,4 @@ async function main() {
 	draw();
 }
 
-main();
+document.addEventListener("DOMContentLoaded", main);

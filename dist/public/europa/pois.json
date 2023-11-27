@@ -7,7 +7,7 @@
 		"imageURLs": [
 			"test.jpg"
 		],
-		"content": "# Markdown test!\n\n*Test!*\n\n**Test**\n\n***Test***\n\n~~Test~~\n\n> Test\n\n`Test`\n\n```Test```"
+		"content": "### Markdown test!\n\n*Test!*\n\n**Test**\n\n***Test***\n\n~~Test~~\n\n> Test\n\n`Test`\n\n```Test```"
 	},
 	{
 		"name": "Rom",
@@ -30,6 +30,18 @@
 			"img/turkey/2.jpg",
 			"img/turkey/3.jpg"
 		],
-		"content": "Die Türkei hat aufgrund ihrer Nichtmitgliedschaft in der Europäischen Union (EU) mit verschiedenen Nachteilen zu kämpfen. Zunächst einmal gibt es wirtschaftliche Nachteile. Obwohl die Türkei eine Zollunion mit der EU unterhält, hat sie keinen vollen Zugang zum EU-Binnenmarkt. \n\nAls EU-Mitglied könnte die Türkei von den wirtschaftlichen Vorteilen, wie freiem Handel und Investitionen, stärker profitieren. Darüber hinaus bestehen politische Spannungen zwischen der Türkei und der EU, insbesondere in Bezug auf demokratische Werte, Menschenrechte und die türkische Innenpolitik.\n\nDies hat zu diplomatischen Konflikten geführt. Die Visumfreiheit ist ein weiterer Nachteil, da türkische Staatsbürger oft Visa für Reisen in die EU benötigen. Dies stellt eine Hürde für Reisen und Geschäftstreffen dar. Politisch ist die Türkei als Nichtmitglied von einigen EU-Entscheidungen und Diskussionen ausgeschlossen, was zu einer gewissen politischen Isolation führt.\n\nAußerdem erhält die Türkei keine finanzielle Unterstützung aus EU-Fonds und Strukturhilfen, die den Mitgliedstaaten zugutekommen. Schließlich müsste die Türkei als EU-Mitglied ihre Gesetzgebung und Standards an EU-Vorgaben anpassen, was Souveränitätseinschränkungen mit sich bringen würde."
+		"content": "### Türkei\nDie Türkei hat aufgrund ihrer Nichtmitgliedschaft in der Europäischen Union (EU) mit verschiedenen Nachteilen zu kämpfen. Zunächst einmal gibt es wirtschaftliche Nachteile. Obwohl die Türkei eine Zollunion mit der EU unterhält, hat sie keinen vollen Zugang zum EU-Binnenmarkt. \n\nAls EU-Mitglied könnte die Türkei von den wirtschaftlichen Vorteilen, wie freiem Handel und Investitionen, stärker profitieren. Darüber hinaus bestehen politische Spannungen zwischen der Türkei und der EU, insbesondere in Bezug auf demokratische Werte, Menschenrechte und die türkische Innenpolitik.\n\nDies hat zu diplomatischen Konflikten geführt. Die Visumfreiheit ist ein weiterer Nachteil, da türkische Staatsbürger oft Visa für Reisen in die EU benötigen. Dies stellt eine Hürde für Reisen und Geschäftstreffen dar. Politisch ist die Türkei als Nichtmitglied von einigen EU-Entscheidungen und Diskussionen ausgeschlossen, was zu einer gewissen politischen Isolation führt.\n\nAußerdem erhält die Türkei keine finanzielle Unterstützung aus EU-Fonds und Strukturhilfen, die den Mitgliedstaaten zugutekommen. Schließlich müsste die Türkei als EU-Mitglied ihre Gesetzgebung und Standards an EU-Vorgaben anpassen, was Souveränitätseinschränkungen mit sich bringen würde."
+	},
+	{
+		"name": "Louvre",
+		"category": "museums",
+		"lat": 48.8606111,
+		"lon": 2.337644,
+		"imageURLs": [
+			"img/louvre/1.jpg",
+			"img/louvre/2.jpg",
+			"img/louvre/3.jpg"
+		],
+		"content": "Der Louvre befindet sich im Palais du Louvre in Paris.\n\nDer Louvre wurde am 10. April 1793 eröffnet, damals mit einem Bestand von 537 Gemälden.\nHeutzutage ist der Louvre, mit einem Bestand von 35.000 Kunstobjekten von der Zeit vor Christus bis zum 21. Jahrjundert, das größte Kunstmuseum der Welt. \n\nDer Louvre ist nicht nur das größte, sondern auch das meistbesuchste Kunstmuseum weltweit.\nMehr als 8 Millionen Menschen kommen jährlich zum Louvre um sich die dort ausgestellten Gemälde anzusehen.\n\nEines der bekanntesten Exponate des Louvres, ist die Mona Lisa. Dessen Originalgemälde wird dort seit dem Ende des 18. Jahrjunderts ausgestellt."
 	}
 ]

@@ -10,5 +10,11 @@
 		"name": "test2",
 		"color": "#22ee22",
 		"selColor": "#11aa11"
+	},
+	{
+		"displayName": "Museen",
+		"name": "museums",
+		"color": "#2222ee",
+		"selColor": "#1111aa"
 	}
 ]

@@ -10,7 +10,6 @@ const categoriesProm = fetch("categories.json").then(r => r.json()) as Promise<C
 const poisProm = fetch("pois.json").then(r => r.json()) as Promise<POIInfo[]>;
 
 async function main() {
-	console.log("Hello world!");
 	const poiHoverTitle = document.getElementById("poi-hover-title") as HTMLDivElement;
 	const poiContent = document.getElementById("poi-content") as HTMLDivElement;
 	const poiImageContainer = document.getElementById("poi-image-container") as HTMLDivElement;
@@ -52,11 +51,23 @@ async function main() {
 		const categoryTitle = document.createElement("button");
 		categoryTitle.className = "category-title";
 		categoryTitle.innerHTML = category.displayName;
+		categoryTitle.style.backgroundColor = category.color;
 		categoryDiv.appendChild(categoryTitle);
 		const categoryItemList = document.createElement("div");
 		categoryItemList.className = "category-item-list";
+		categoryItemList.style.backgroundColor = category.color;
 		categoryDiv.appendChild(categoryItemList);
 		catItemLists[category.name] = categoryItemList;
+
+		categoryTitle.addEventListener("mouseenter", () => {
+			categoryTitle.style.backgroundColor = category.selColor;
+			categoryItemList.style.backgroundColor = category.selColor;
+		});
+
+		categoryTitle.addEventListener("mouseleave", () => {
+			categoryTitle.style.backgroundColor = category.color;
+			categoryItemList.style.backgroundColor = category.color;
+		});
 
 		categoryTitle.addEventListener("click", () => {
 			const wasActive = categoryItemList.classList.contains("active");
@@ -112,7 +123,9 @@ async function main() {
 		for (let i = 0; i < urls.length; i++) {
 			const img = document.createElement("img");
 			img.src = urls[i];
-			img.style.height = "100%";
+			img.style.minWidth = "100%";
+			img.style.maxWidth = "100%";
+			img.style.minHeight = "100%";
 
 			const div = document.createElement("div");
 			div.style.gridColumn = `${i + 1}`;
@@ -211,6 +224,47 @@ async function main() {
 			drawer.zoomTo(new Three.Vector3(e.clientX, e.clientY), e.deltaY);
 		}
 	});
+
+	let touches: {touchId: number, startPos: number[]}[] = [];
+	document.addEventListener("touchstart", e => {
+		e.preventDefault();
+
+		for (const touch of e.changedTouches) {
+			if (touches.find(t => t.touchId === touch.identifier)) {
+				continue;
+			}
+
+			touches.push({touchId: touch.identifier, startPos: [touch.clientX, touch.clientY]});
+		}
+		
+	}, { passive: false });
+
+	document.addEventListener("touchend", e => {
+		e.preventDefault();
+
+		for (const touch of e.changedTouches) {
+			const index = touches.findIndex(t => t.touchId === touch.identifier);
+			if (index === -1) {
+				continue;
+			}
+
+			touches.splice(index, 1);
+		}
+	}, { passive: false });
+
+	document.addEventListener("touchmove", e => {
+		e.preventDefault();
+
+		if (touches.length === 1) {
+			const t = touches[0];
+			const touch = e.changedTouches[0];
+			const delta = new Three.Vector2(touch.clientX - t.startPos[0], touch.clientY - t.startPos[1]);
+			
+			drawer.moveCamera(delta);
+
+			t.startPos = [touch.clientX, touch.clientY];
+		}
+	}, { passive: false });
 
 	function draw() {
 		if (focusState === "map") {

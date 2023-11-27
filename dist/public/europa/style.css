@@ -45,6 +45,7 @@ body {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	height: 250px;
+	min-width: 100%;
 	overflow: hidden;
 }
 
@@ -82,10 +83,6 @@ body {
 	text-align: left;
 	outline: none;
 	font-size: 18pt;
-}
-
-.active, .category-title:hover {
-	background-color: #ccc;
 }
 
 .category-item-list {

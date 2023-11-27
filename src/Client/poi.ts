@@ -5,6 +5,7 @@ export interface Category {
 	displayName: string;
 	name: string;
 	color: string;
+	selColor: string;
 }
 
 export interface POIInfo {

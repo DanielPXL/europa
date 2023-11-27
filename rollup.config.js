@@ -31,7 +31,7 @@ const config = [
 		plugins: [
 			typescript(),
 			nodeResolve(),
-			terser()
+			// terser()
 		]
 	}
 ];

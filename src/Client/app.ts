@@ -58,7 +58,7 @@ async function main() {
 		checkClick(e.touches[0].clientX, e.touches[0].clientY);
 	});
 
-	window.addEventListener("resize", (e) => {
+	function checkIfSidebarShouldBeVisible() {
 		if (window.innerWidth < window.innerHeight || window.innerWidth < 800) {
 			sidebar.hide();
 		} else {
@@ -66,7 +66,13 @@ async function main() {
 				sidebar.show();
 			}
 		}
-	})
+	}
+
+	window.addEventListener("resize", (e) => {
+		checkIfSidebarShouldBeVisible();
+	});
+
+	checkIfSidebarShouldBeVisible();
 }
 
 document.addEventListener("DOMContentLoaded", main);

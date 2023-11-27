@@ -1,20 +1,65 @@
 [
 	{
-		"displayName": "Test Category 1",
-		"name": "test1",
-		"color": "#ee2222",
-		"selColor": "#aa1111"
-	},
-	{
-		"displayName": "Test Category 2!!!",
-		"name": "test2",
-		"color": "#22ee22",
-		"selColor": "#11aa11"
-	},
-	{
 		"displayName": "Museen",
 		"name": "museums",
-		"color": "#2222ee",
-		"selColor": "#1111aa"
+		"color": { "h": 60, "s": 220, "v": 50 },
+		"btnColor": { "h": 45, "s": 86, "v": 93 },
+		"selColor": { "h": 60, "s": 90, "v": 30 }
+	},
+	{
+		"displayName": "Touristische Ziele",
+		"name": "tourism",
+		"color": { "h": 120, "s": 156, "v": 93 },
+		"btnColor": { "h": 120, "s": 86, "v": 93 },
+		"selColor": { "h": 120, "s": 90, "v": 67 }
+	},
+	{
+		"displayName": "Natur",
+		"name": "nature",
+		"color": { "h": 75, "s": 280, "v": 93 },
+		"btnColor": { "h": 80, "s": 86, "v": 93 },
+		"selColor": { "h": 80, "s": 90, "v": 67 }
+	},
+	{
+		"displayName": "Ausbreitung Europas",
+		"name": "expansion",
+		"color": { "h": 180, "s": 186, "v": 93 },
+		"btnColor": { "h": 180, "s": 86, "v": 93 },
+		"selColor": { "h": 160, "s": 90, "v": 67 }
+	},
+	{
+		"displayName": "Handel und Wirtschaft",
+		"name": "economy",
+		"color": { "h": 210, "s": 176, "v": 93 },
+		"btnColor": { "h": 210, "s": 86, "v": 93 },
+		"selColor": { "h": 210, "s": 90, "v": 67 }
+	},
+	{
+		"displayName": "Historie",
+		"name": "history",
+		"color": { "h": 0, "s": 96, "v": 93 },
+		"btnColor": { "h": 0, "s": 86, "v": 93 },
+		"selColor": { "h": 0, "s": 90, "v": 67 }
+	},
+	{
+		"displayName": "Flüchtlinge",
+		"name": "refugees",
+		"color": { "h": 270, "s": 106, "v": 93 },
+		"btnColor": { "h": 270, "s": 86, "v": 93 },
+		"selColor": { "h": 270, "s": 90, "v": 67 }
+	},
+	{
+		"displayName": "Nachteile für nicht-EU-Länder",
+		"name": "disadvantages",
+		"color": { "h": 230, "s": 126, "v": 93 },
+		"btnColor": { "h": 230, "s": 86, "v": 93 },
+		"selColor": { "h": 230, "s": 90, "v": 67 }
+	},
+	{
+		"displayName": "Kleine Länder und ihre Entstehung",
+		"name": "small",
+		"color": { "h": 320, "s": 106, "v": 93 },
+		"btnColor": { "h": 320, "s": 86, "v": 93 },
+		"selColor": { "h": 320, "s": 90, "v": 67 }
 	}
 ]

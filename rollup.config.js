@@ -26,12 +26,18 @@ const config = [
 		input: "src/Client/app.ts",
 		output: {
 			file: "dist/public/europa/client.js",
-			format: "iife"
+			format: "iife",
+			globals: {
+				leaflet: "L"
+			}
 		},
 		plugins: [
 			typescript(),
 			nodeResolve(),
 			// terser()
+		],
+		external: [
+			"leaflet"
 		]
 	}
 ];

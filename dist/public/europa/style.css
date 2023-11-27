@@ -5,6 +5,15 @@ body {
 	font-size: 18pt;
 }
 
+#map {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
 /* @keyframes poi-popup {
 	10% {
 		width: 80px;
@@ -29,12 +38,13 @@ body {
 	position: absolute;
 	width: max(60%, 80vmin);
 	height: 90%;
-	left: 50%;
+	left: 150%;
 	top: 50%;
 	transform: translate(-50%, -50%);
 	overflow-x: hidden;
 	overflow-y: scroll;
-	/* animation: poi-popup 0.5s ease-in-out normal 1; */
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+	transition: left 0.2s ease-out;
 }
 
 #poi-content-text {
@@ -44,7 +54,7 @@ body {
 #poi-image-container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	height: 250px;
+	height: 40%;
 	min-width: 100%;
 	overflow: hidden;
 }
@@ -65,9 +75,11 @@ body {
 	width: 300px;
 	height: 90%;
 	top: 50%;
-	left: 40px;
+	left: 60px;
 	transform: translate(0%, -50%);
 	overflow: hidden;
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+	transition: left 0.25s ease-out;
 }
 
 #categories {
@@ -102,4 +114,10 @@ body {
 	text-align: left;
 	outline: none;
 	font-size: 18pt;
+}
+
+img {
+	display: block;
+	margin: auto;
+	object-fit: cover;
 }

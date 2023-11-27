@@ -1,36 +1,49 @@
 [
 	{
-		"name": "Test!",
-		"category": "test1",
-		"lat": 53.5341191,
-		"lon": 8.1336471,
+		"name": "Paris",
+		"category": "history",
+		"lat": 48.856613,
+		"lon": 2.352222,
 		"imageURLs": [
-			"test.jpg"
+			"img/paris/1.jpg",
+			"img/paris/2.jpg",
+			"img/paris/3.jpg"
 		],
-		"content": "### Markdown test!\n\n*Test!*\n\n**Test**\n\n***Test***\n\n~~Test~~\n\n> Test\n\n`Test`\n\n```Test```"
+		"content": "Die Geschichte von Paris ist reich an kulturellen und historischen Ereignissen. Im Mittelalter wurde Paris das politische und kulturelle Zentrum Frankreichs.\n\nParis erlebte große Veränderungen im 19. Jahrhundert, durch die Industrialisierung, die Stadt wurde zu einem bekannten Zentrum der Phiolosophie, Literatur und Kunst. Der Eiffelturm wurde 1889 zur Weltausstellung errichtet, er symbolisiert den technologischen Fortschritt der Ära.\n\nIm 20. Jahrjundert spielte Paris eine entscheidene Rolle in historischen Ereignissen, darunter die Besatzung während des Zweiten Weltkriegs und die Befreiung 1944. Paris spielte auch eine große Rolle in der Entwicklung der europäischen Union.\nHeutzutage ist Paris bekannt für seine Kunst, Mode und Kultur."
 	},
 	{
-		"name": "Rom",
-		"category": "test2",
-		"lat": 41.902644733045875,
-		"lon": 12.496438260058852,
+		"name": "Berlin",
+		"category": "history",
+		"lat": 52.520008,
+		"lon": 13.404954,
 		"imageURLs": [
-			"test.jpg",
-			"test.jpg"
+			"img/berlin/1.jpg",
+			"img/berlin/2.jpg",
+			"img/berlin/3.jpg"
 		],
-		"content": "Rom ist die Hauptstadt Italiens. Sie liegt in der Region Latium an den Ufern des Flusses Tiber. Rom war als Hauptstadt des Römischen Reiches und der Nachfolgestaaten bis 1870 politisches, wirtschaftliches und kulturelles Zentrum Europas. Die Stadt ist eine der bedeutendsten Metropolen der Welt und Zentrum des römisch-katholischen Christentums. Seit 1980 gehört die historische Altstadt zum UNESCO-Welterbe."
+		"content": "Berlin wurde ursprünglich im 13. Jahrhundert gegründet. Im Laufe der Zeit entwickelte die Stadt sich zu einer bedeutenden Handelsmetropole. Während des Dreißigjährigen Krieges erlitt Berlin schwere Zerstörungen, aber im 18. Jahrjundert erlebte die Stadt eine kulturelle Blütezeit.\n\nDie Teilung der Stadt in Ost- und West-Berlin während des Kalten Krieges, deutlich dargestellt durch die Berliner Mauer, entwickelte politische Spannungen zwischen Ost und West. Der Mauerfall im Jahr 1989 makierte den Beginn der Wiedervereinigung Deutschlands.\n\nBerlin ist die Hauptstadt Deutschlands, die Stadt hat sich zu einem Symbol für kulturelle Vielfalt und Kreativität entwickelt. Die relikte aus vergangenen Epochen, von den Schlössern bis zu den Überresten der Mauer, erinnern an die Vergangenheit dieser Stadt."
 	},
 	{
-		"name": "Türkei",
-		"category": "test1",
-		"lat": 39.22401858148953, 
-		"lon": 35.08045237117598,
+		"name": "Weimar",
+		"category": "history",
+		"lat": 50.979493,
+		"lon": 11.323544,
 		"imageURLs": [
-			"img/turkey/1.jpg",
-			"img/turkey/2.jpg",
-			"img/turkey/3.jpg"
+			"img/weimar/1.jpg",
+			"img/weimar/2.jpg",
+			"img/weimar/3.jpg"
 		],
-		"content": "### Türkei\nDie Türkei hat aufgrund ihrer Nichtmitgliedschaft in der Europäischen Union (EU) mit verschiedenen Nachteilen zu kämpfen. Zunächst einmal gibt es wirtschaftliche Nachteile. Obwohl die Türkei eine Zollunion mit der EU unterhält, hat sie keinen vollen Zugang zum EU-Binnenmarkt. \n\nAls EU-Mitglied könnte die Türkei von den wirtschaftlichen Vorteilen, wie freiem Handel und Investitionen, stärker profitieren. Darüber hinaus bestehen politische Spannungen zwischen der Türkei und der EU, insbesondere in Bezug auf demokratische Werte, Menschenrechte und die türkische Innenpolitik.\n\nDies hat zu diplomatischen Konflikten geführt. Die Visumfreiheit ist ein weiterer Nachteil, da türkische Staatsbürger oft Visa für Reisen in die EU benötigen. Dies stellt eine Hürde für Reisen und Geschäftstreffen dar. Politisch ist die Türkei als Nichtmitglied von einigen EU-Entscheidungen und Diskussionen ausgeschlossen, was zu einer gewissen politischen Isolation führt.\n\nAußerdem erhält die Türkei keine finanzielle Unterstützung aus EU-Fonds und Strukturhilfen, die den Mitgliedstaaten zugutekommen. Schließlich müsste die Türkei als EU-Mitglied ihre Gesetzgebung und Standards an EU-Vorgaben anpassen, was Souveränitätseinschränkungen mit sich bringen würde."
+		"content": "Weimar erlangte im 18. Jahrhundert kulturelle Bedeutung, diese Epoche wird auch oft als „Weimarer Klassik“ bezeichnet und umfasst viele Werke von bedeutenden Schriftstellern.\n\nIm 20. Jahrhundert wurde Weimar zum Zentrum der Weimarer Republik, diese war die erste demokratische Regierung in Deutschland nach dem Ersten Weltkrieg.\n\nDie Weimarer Republik erlebte politische Instabilitäten und soziale Unruhen, dies führte schließlich zum Aufstieg der Nationalsozialisten. Weimar ist seitdem ein Symbol für die zerbrechliche Natur der Demokratie.\nWeimar ist für sein reiches kulturelles Erbe bekannt."
+	},
+	{
+		"name": "Goethe Museum",
+		"category": "museums",
+		"lat": 51.23090211942319,
+		"lon": 6.787636812484129,
+		"imageURLs": [
+			"img/goethe/1.jpg"
+		],
+		"content": "Das Goethe Museum in Düsseldorf ist eine eindrucksvolle Einrichtung, gewidmet dem Leben und dem Werk des deutschen Dichters Johann Wolfgang von Goethe. Das Museum befindet sich im Goethe Haus, ein Gebäude aus dem 19. Jahrhundert.\n\nDie Austellung besteht aus persönlichen Gegenständen, handschriftlichen Werken, Gemälden und anderen Artefakten Goethes. Dies ermöglicht einen tiefen Einblick in das Leben Goethes, auch können Besucher das Schreibzimmer des Dichters erkunden.\n\nDie Dauerasutellung  vermittelt Goethes vielfältige Interessen von Literatur und Kunst, bis zu den Naturwissenschaften. Das Museum bietet aber auch regelmäßig wechselnde Sonderaustellungen und Veranstaltungen."
 	},
 	{
 		"name": "Louvre",
@@ -42,6 +55,258 @@
 			"img/louvre/2.jpg",
 			"img/louvre/3.jpg"
 		],
-		"content": "Der Louvre befindet sich im Palais du Louvre in Paris.\n\nDer Louvre wurde am 10. April 1793 eröffnet, damals mit einem Bestand von 537 Gemälden.\nHeutzutage ist der Louvre, mit einem Bestand von 35.000 Kunstobjekten von der Zeit vor Christus bis zum 21. Jahrjundert, das größte Kunstmuseum der Welt. \n\nDer Louvre ist nicht nur das größte, sondern auch das meistbesuchste Kunstmuseum weltweit.\nMehr als 8 Millionen Menschen kommen jährlich zum Louvre um sich die dort ausgestellten Gemälde anzusehen.\n\nEines der bekanntesten Exponate des Louvres, ist die Mona Lisa. Dessen Originalgemälde wird dort seit dem Ende des 18. Jahrjunderts ausgestellt."
+		"content": "Der Louvre ist das weltweit größte und am meist besuchte Kunstmuseum. Die Geschichte des Louvres reicht bis ins 18. Jahrhundert zurück. Das imposante Gebäude des Museums war einst ein königlicher Palast, doch während der Französischen Revolution wurde es zum Museum umgewandelt.\n\nDie Austellung des Louvres umfasst über 35.000 Kunstwerke, von antiken Relikten bis zu Meisterwerken der Renaissance und Werken des 19. Jahrhunderts, das meist bekannte Gemälde ist zweifellos die Mona Lisa von Leonardo da Vinci.\n\nDie Glass Pyramide ist zu einem Symbol für das Museum geworden."
+	},
+	{
+		"name": "Rijksmuseum",
+		"category": "museums",
+		"lat": 52.35999659020236, 
+		"lon": 4.885186244785569,
+		"imageURLs": [
+			"img/rijksmuseum/1.jpg",
+			"img/rijksmuseum/2.jpg",
+			"img/rijksmuseum/3.jpg"
+		],
+		"content": "Das Rijksmuseum in Amsterdam präsentiert die Geschichte der niederländischen Kunst und Kultur. Das Hauptgebäude stammt aus dem 19. Jahrjundert.\n\nDie Austellung des Museums umfasst eine Vielfalt von Kunstwerken von niderländischen Malern. Die Gemälde, Skulpturen und Artefakte bieten einen Einblick in die künstlerische Entwicklung im Laufe der Jahrhunderte.\n\nAuch werden Kunstwerke zu Themen wie angewandte Kunst, Handwerk und Geschichte ausgestellt. \n\nMit seinen vielfältigen kulturellen Erbe, ist das Rijksmuseum ein Ort in dem man über die reiche  niderländische Geschichte und Kunst lernen kann."
+	},
+	{
+		"name": "Jotunheimen",
+		"category": "nature",
+		"lat": 61.63329124014538, 
+		"lon": 8.30008570969607,
+		"imageURLs": [
+			"img/jotunheimen/1.jpg",
+			"img/jotunheimen/2.jpg",
+			"img/jotunheimen/3.jpg"
+		],
+		"content": "Jotunheimen bedeutet übersetzt “Heim der Riesen”, es ist ein massives Gebirge in Norwegen und beherbergt einige der höchsten Gipfel des Landes.\n\nJotunheimen ist bekannt für die atemberaubende Landschaft, mit Tälern, Bergseen und Gletschern. Es werden viele verschiedene Outdoor-Aktivitäten angeboten, zum Beispiel Wanderungen, Berbesteigungen oder im Winter auch Ski fahren.\n\nDer Nationalpark wurde 1980 gegründet und schützt das Gebirge.  Auch der norwegische Folklore und die Mythologie spielen hier eine bedeutende Rolle, da Jotunheimen in den Geschichten der nordischen Kultur als die Heimat der Riesen verankert ist."
+	},
+	{
+		"name": "Nationalpark Wattenmeer",
+		"category": "nature",
+		"lat": 53.72453771201434,
+		"lon": 7.855128396733755,
+		"imageURLs": [
+			"img/wattenmeer/1.jpg",
+			"img/wattenmeer/2.jpg",
+			"img/wattenmeer/3.jpg"
+		],
+		"content": "Das Wattenmeer ist ein einzigartiges Ökosystem. Der Nationalpark “Wattenmeer” ist das größte zusammenhängende Wattenmeer System und steht als UNESCO-Weltnaturerbe unter Schutz.\n\nDas Gebiet ist vom ständigen Wechsel der Gezeiten geprägt. Dadurch entstehen Wattflächen, die bei Ebbe trocken fallen und bei Flut überflutet werden. Das Wattenmeer ist die Heimat einer Vielfalt von Pflanzen und Tieren, darunter Robben und zahlreiche Fischarten.\n\nDer Nationalpark bietet zahlreiche Möglichkeiten für Naturbeobachtungen, Wattwanderungen und Vogelbeobachtungen.\n\nDas Wattenmeer spielt eine entscheidene Rolle im globalen Vogelzug, es ist eine wichtige Rast- und Nahrungsstelle für zahlreiche Vogelarten. Damit steht der Nationalpark “Wattenmeer” sowohl für die natürliche Schönheit, als auch für die Erhaltung einer ökologisch bedeutsamen Region."
+	},
+	{
+		"name": "Lo Zingaro",
+		"category": "nature",
+		"lat": 38.08192857168841,
+		"lon": 12.807903237241643,
+		"imageURLs": [
+			"img/zingaro/1.jpg",
+			"img/zingaro/2.jpg",
+			"img/zingaro/3.jpg"
+		],
+		"content": "Lo Zingaro ist eine Naturlandschaft in Sizillien, die durch ihre unberührte Schöhnheit, Buchten und kristallklares Wasser heraussticht. Das Reservat bietet eine vielfältige Flora und Fauna, mit seltenen Pflanzenarten und einer reichen Vogelwelt.\n\nBesucher können auf Wanderwegen die unberührte Küstenlandschaft entdecken. Diese besteht nicht nur aus Buchten, sondern auch aus historischen Stätten und Ruinen antiker Bauwerke.\n\nLo Zingaro ermöglicht es den Besuchern, die Schönheit der einzigarteigen Umgebung zu schätzen und dabei gleichzeitig ihre Erhaltung zu unterstützen. Es ist ein Ort der Ruhe und Naturschutz in Harmonie vereint."
+	},
+	{
+		"name": "Bibione",
+		"category": "tourism",
+		"lat": 45.642166,
+		"lon": 13.059842,
+		"imageURLs": [
+			"img/bibione/1.jpg",
+			"img/bibione/2.jpg",
+			"img/bibione/3.jpg"
+		],
+		"content": "Bibione, eine Küstenstadt in der Region Venetien in Norditalien, ist ein bedeutendes touristisches Ziel innerhalb der Europäischen Union[2]. Mit seiner Lage am Adriatischen Meer zieht es vor allem deutsche, österreichische, tschechische und slowakische Touristen an[2].\n\nDie Stadt bietet eine Vielzahl von Attraktionen und Aktivitäten. Dazu gehören der weitläufige Sandstrand, der Leuchtturm von Bibione, der Luna Park Adriatico und eine Vielzahl von Outdoor-Aktivitäten wie Radfahren und Wandern[3][7]. Darüber hinaus bietet das Stadtzentrum eine Vielzahl von Geschäften und Restaurants, die den Besuchern ein umfassendes Urlaubserlebnis bieten[5].\n\nBibione spielt auch eine wichtige Rolle in der italienischen Tourismusindustrie, die etwa 9% zur nationalen Wirtschaft beiträgt[10]. Mit rund 100.000 Betten in Hotels, Ferienwohnungen und auf Campingplätzen trägt Bibione erheblich zur Beherbergungskapazität der Region bei[2]."
+	},
+	{
+		"name": "Lofoten",
+		"category": "tourism",
+		"lat": 68.333332,
+		"lon": 14.666664,
+		"imageURLs": [
+			"img/lofoten/1.jpg",
+			"img/lofoten/2.jpg",
+			"img/lofoten/3.jpg"
+		],
+		"content": "Die Lofoten, eine Inselgruppe in Norwegen, sind ein bedeutendes touristisches Ziel innerhalb der Europäischen Union. Mit ihrer atemberaubenden Landschaft, die hohe Berge, tiefe Fjorde, weiße Sandstrände und malerische Fischerdörfer umfasst, ziehen sie das ganze Jahr über eine Vielzahl von Touristen an.\n\nDie Inselgruppe ist eng mit der Fischerei verbunden, insbesondere mit dem\nStockfisch. Trotz der wachsenden Bedeutung des Tourismus bleibt der Fischfang eine der wichtigsten Einnahmequellen auf den Inseln[4][5]. Die Stadt Svolvær, die größte Stadt auf den Lofoten, ist ein wichtiger Verkehrsknotenpunkt und ein Zentrum für die Fischerei[1][4].\n\nNeben der Fischerei hat sich auf den Lofoten eine beeindruckende Kunstszene entwickelt, insbesondere in Svolvær, das überregionale Bekanntheit erlangt hat und sich zum Mekka für engagierte Künstler entwickelt hat[4]. Zudem bieten die Lofoten eine reiche Tierwelt und zahlreiche Outdoor-Aktivitäten, was sie zu einem attraktiven Ziel für Naturliebhaber und Abenteurer macht[5]."
+	},
+	{
+		"name": "Wien",
+		"category": "tourism",
+		"lat": 48.2088860308396, 
+		"lon": 16.334387781178776,
+		"imageURLs": [
+			"img/wien/1.jpg",
+			"img/wien/2.jpg",
+			"img/wien/3.jpg"
+		],
+		"content": "Wien, die Bundeshauptstadt der Republik Österreich, ist ein bedeutendes touristisches Ziel innerhalb der Europäischen Union. Mit rund 2 Millionen Einwohnern und einer reichen Geschichte, die bis ins Mittelalter zurückreicht, zieht Wien jährlich rund 7,5 Millionen Touristen an[1].\n\nDie Stadt ist bekannt für ihre beeindruckende Architektur, darunter das historische Zentrum und das Schloss Schönbrunn, die beide zum UNESCO-Weltkulturerbe gehören. Darüber hinaus bietet Wien eine Vielzahl von Sehenswürdigkeiten und\nMuseen, die eine breite Palette von Interessen abdecken, von Kunst und Geschichte bis hin zu Natur und Technik[2][3][6].\n\nWien spielt auch eine wichtige Rolle in der österreichischen Wirtschaft, insbesondere durch den Tourismus, der zu einem wichtigen Wirtschaftsfaktor geworden ist. Die Stadt hat in den letzten Jahren ein stärkeres Wachstum der Touristenankünfte und Übernachtungen verzeichnet als andere österreichische Tourismusregionen[4][5]."
+	},
+	{
+		"name": "Kroatien",
+		"category": "expansion",
+		"lat": 45.100000,
+		"lon": 15.200000,
+		"imageURLs": [
+			"img/kroatien/1.jpg",
+			"img/kroatien/2.jpg",
+			"img/kroatien/3.jpg"
+		],
+		"content": "Kroatien hat seit seinem Beitritt zur Europäischen Union (EU) im Jahr 2013 erhebliche wirtschaftliche Vorteile erzielt. Die  Mitgliedschaft hat den Handel mit anderen EU-Ländern gestärkt, wobei 67% der kroatischen Ausfuhren in EU-Länder gehen[1]. Dies hat die Wirtschaft des Landes belebt und zur Stabilisierung beigetragen[2].\n\nDie Integration in die EU hat auch die politische Landschaft Kroatiens beeinflusst. Kroatien entsendet 12 Abgeordnete ins Europäische Parlament und hat Vertreter in wichtigen EU-Gremien, was dem Land eine Stimme in der europäischen Politik gibt[1]. Darüber hinaus hat die EU-Mitgliedschaft dazu beigetragen, die\nKorruption zu bekämpfen und die Unabhängigkeit der Justiz zu stärken[2].\n\nDie Einführung des Euro als Währung im Jahr 2023 ist ein weiterer wichtiger Schritt in der europäischen Integration Kroatiens[5]. Dies wird voraussichtlich die Wirtschaft weiter stärken, insbesondere den Tourismussektor, der einen erheblichen Anteil am BIP des Landes ausmacht[6]."
+	},
+	{
+		"name": "Bulgarien",
+		"category": "expansion",
+		"lat": 42.677143,
+		"lon": 25.398382,
+		"imageURLs": [
+			"img/bulgarien/1.jpg",
+			"img/bulgarien/2.jpg",
+			"img/bulgarien/3.jpg"
+		],
+		"content": "Bulgarien hat seit seinem Beitritt zur Europäischen Union (EU) im Jahr 2007 erhebliche wirtschaftliche und politische Vorteile erzielt. Die Mitgliedschaft hat den Handel mit anderen EU-Ländern gestärkt, wobei 61% der bulgarischen Einfuhren aus EU-Ländern kommen[1]. Dies hat die Wirtschaft des Landes belebt und zur Stabilisierung beigetragen[4].\n\nDie Integration in die EU hat auch die politische Landschaft Bulgariens beeinflusst. Bulgarien entsendet 17 Abgeordnete ins Europäische Parlament und hat Vertreter in wichtigen EU-Gremien, was dem Land eine Stimme in der europäischen Politik gibt[1]. Darüber hinaus hat die EU-Mitgliedschaft dazu beigetragen, die Korruption zu bekämpfen und die Unabhängigkeit der Justiz zu stärken[2].\n\nBulgarien hat auch von EU-Fördermitteln profitiert, die etwa 80% der öffentlichen Investitionen des Landes finanzieren. Diese Mittel haben dazu beigetragen, die Wettbewerbsfähigkeit zu verbessern und die Infrastruktur auszubauen[4].\n\nZusammenfassend lässt sich sagen, dass die EU-Mitgliedschaft und die Integration in die europäische Wirtschaft für Bulgarien von großer Bedeutung sind. Sie haben nicht nur die wirtschaftliche Leistungsfähigkeit des Landes verbessert, sondern auch zur politischen Stabilität und Entwicklung beigetragen[1][2][4]."
+	},
+	{
+		"name": "Estland",
+		"category": "expansion",
+		"lat": 58.638223,
+		"lon": 25.817284,
+		"imageURLs": [
+			"img/estland/1.jpg",
+			"img/estland/2.jpg",
+			"img/estland/3.jpg"
+		],
+		"content": "Estland hat seit seinem Beitritt zur Europäischen Union (EU) im Jahr 2004 erhebliche wirtschaftliche und politische Vorteile erzielt. Die Mitgliedschaft hat den Handel mit anderen EU-Ländern gestärkt, wobei 75% der estnischen Einfuhren aus EU-Ländern kommen[4]. Dies hat die Wirtschaft des Landes belebt und zur Stabilisierung beigetragen[1].\n\nDie Integration in die EU hat auch die politische Landschaft Estlands beeinflusst. Estland entsendet sieben Abgeordnete ins Europäische Parlament und hat Vertreter in wichtigen EU-Gremien, was dem Land eine Stimme in der europäischen Politik gibt[2]. Darüber hinaus hat die EU-Mitgliedschaft dazu beigetragen, die Korruption zu bekämpfen und die Unabhängigkeit der Justiz zu stärken[2].\n\nEstland hat auch von EU-Fördermitteln profitiert, die zur Finanzierung von Projekten und zur Verbesserung der Infrastruktur des Landes beitragen[3]."
+	},
+	{
+		"name": "Rotterdam",
+		"category": "economy",
+		"lat": 51.905445,
+		"lon": 4.466637,
+		"imageURLs": [
+			"img/rotterdam/1.jpg",
+			"img/rotterdam/2.jpg",
+			"img/rotterdam/3.jpg"
+		],
+		"content": "Rotterdam, als führende Industrie- und Handelsstadt der Niederlande, spielt eine entscheidende Rolle in der europäischen Wirtschaft[1]. Der Hafen von Rotterdam, der größte Seehafen Europas und einer der größten der Welt, ist ein zentraler Umschlagplatz für Waren und Güter[4][7]. Er trägt etwa 7% zum niederländischen Bruttoinlandsprodukt bei und beschäftigt rund 320.000 Arbeitnehmer[3].\n\nDie Stadt ist ein wichtiger Knotenpunkt für den Handel mit Erdöl, wobei Millionen Tonnen Öl jährlich hier ankommen[2]. Darüber hinaus ist Rotterdam durch eigene Pipelines direkt mit großen Abnehmern wie dem Frankfurter Flughafen verbunden[2]. Der Hafen hat einen Anteil von 34% an den gesamten Transporten zwischen Deutschland und den für Deutschland relevanten Seehäfen[6].\n\nRotterdam ist auch ein wichtiger Eisenbahn-Knotenpunkt, der den Hafen mit dem Ruhrgebiet verbindet[3][7]. Darüber hinaus ist die Stadt ein bedeutender Umschlagplatz für die Lebensmittelindustrie, insbesondere für landwirtschaftliche Produkte[8]."
+	},
+	{
+		"name": "Frankfurt am Main",
+		"category": "economy",
+		"lat": 50.10919583863266, 
+		"lon": 8.703103189236765,
+		"imageURLs": [
+			"img/frankfurt/1.jpg",
+			"img/frankfurt/2.jpg",
+			"img/frankfurt/3.jpg"
+		],
+		"content": "Die Europäische Zentralbank (EZB) mit Sitz in Frankfurt am Main ist eine zentrale Institution der europäischen Wirtschaft. Sie ist die gemeinsame Währungsbehörde der Mitgliedstaaten der Europäischen Währungsunion und bildet mit den nationalen Zentralbanken der EU-Staaten das Europäische System der Zentralbanken (ESZB)[7].\n\nDie Hauptaufgabe der EZB besteht darin, Preisstabilität zu gewährleisten. Dies erreicht sie durch die Kontrolle der Inflation, um sicherzustellen, dass die Preise im Euroraum stabil bleiben[4][2]. Die EZB legt die Leitzinsen fest und führt Offenmarktgeschäfte durch, um die Geldpolitik zu steuern[3][8].\n\nDarüber hinaus ist die EZB seit 2014 für Aufgaben im Zusammenhang mit der Aufsicht über Kreditinstitute zuständig. Sie trägt dazu bei, dass das europäische Bankensystem sicher und robust ist, und sorgt dafür, dass das Geld der Bürger bei den Banken sicher ist[4][5]."
+	},
+	{
+		"name": "Zürich",
+		"category": "economy",
+		"lat": 47.366669,
+		"lon": 8.550000,
+		"imageURLs": [
+			"img/zurich/1.jpg",
+			"img/zurich/2.jpg",
+			"img/zurich/3.jpg"
+		],
+		"content": "Zürich ist ein bedeutendes Zentrum der europäischen Wirtschaft, insbesondere in den Bereichen Vermögensverwaltung und Versicherung.\nDie Stadt beherbergt einen erheblichen Anteil des schweizerischen Finanzsektors, wobei 44% der Wertschöpfung des Sektors in Zürich generiert werden[1].\n\nIn der Vermögensverwaltung ist Zürich weltweit führend. Schweizer Banken verwalten Vermögenswerte in Höhe von etwa 7,9 Billionen Schweizer Franken, wovon mehr als 2,3 Billionen von privaten Kunden außerhalb der Schweiz stammen[9]. Dies entspricht mehr als 25% des globalen Marktanteils, was die Schweiz zum Marktführer in der internationalen Vermögensverwaltung macht[9][2].\n\nDie Versicherungsbranche ist ebenfalls ein tragender Pfeiler der Zürcher Wirtschaft. Die Stadt Zürich beheimatet einige der größten Versicherungskonzerne der Schweiz, darunter die Zürich Insurance Group, die größte Privatversicherung des Landes[8]. Die Versicherungsbranche in Zürich bietet rund 19.000 Vollzeitarbeitsplätze[1]."
+	},
+	{
+		"name": "Liechtenstein",
+		"category": "small",
+		"lat": 47.141040,
+		"lon": 9.520928,
+		"imageURLs": [
+			"img/liechtenstein/1.jpg",
+			"img/liechtenstein/2.jpg",
+			"img/liechtenstein/3.jpg"
+		],
+		"content": "Liechtenstein, benannt nach dem Fürstenhaus Liechtenstein, wurde im 17. Jahrhundert gegründet, als die Grafschaft Vaduz und das Fürstentum Schellenberg unter der Herrschaft des Heiligen Römischen Reiches zu einer politischen Einheit vereint wurden.\n\nObwohl Liechtenstein nicht Mitglied der Europäischen Union ist, pflegt es enge Beziehungen durch den Europäischen Wirtschaftsraum (EWR) und das Schengen-Abkommen. Das Fürstentum hat bilaterale Abkommen mit der EU abgeschlossen, die es in Bereichen wie Wirtschaft, Landwirtschaft und Verkehr integrieren. Liechtenstein nutzt den Schweizer Franken als offizielle Währung und orientiert sich in vielen rechtlichen und wirtschaftlichen Aspekten an der Schweiz. Die Bedeutung von Liechtenstein für die EU liegt in der Förderung wirtschaftlicher Zusammenarbeit und der Stärkung regionaler Integration, obwohl es politisch unabhängig bleibt."
+	},
+	{
+		"name": "Andorra",
+		"category": "small",
+		"lat": 42.506317,
+		"lon": 1.521835,
+		"imageURLs": [
+			"img/andorra/1.jpg",
+			"img/andorra/2.jpg",
+			"img/andorra/3.jpg"
+		],
+		"content": "Andorra entstand im 9. Jahrhundert durch den Karolingerkaiser Karl den Großen. Die Co-Fürstentümer Andorras wurden später dem Bischof von Urgell und dem Grafen von Foix zugewiesen. Dieses einzigartige politische System besteht bis heute.\n\nAndorra ist kein EU-Mitglied, aber es unterhält enge Beziehungen durch das Zollabkommen von 1990. Dieses Abkommen fördert wirtschaftliche Zusammenarbeit und Handel. Andorra verwendet den Euro als offizielle Währung und hat mit der EU Abkommen über den Schengen-Raum geschlossen. Obwohl es nicht direkt in EU-Entscheidungsprozesse involviert ist, beeinflusst die Zusammenarbeit die wirtschaftlichen Interessen und die Mobilität zwischen Andorra und EU-Mitgliedstaaten. Insgesamt spielt Andorra eine besondere Rolle in Bezug auf europäische Zusammenarbeit, indem es trotz seiner geringen Größe eine einzigartige politische und wirtschaftliche Position in der Region behauptet."
+	},
+	{
+		"name": "Vatikanstaat",
+		"category": "small",
+		"lat": 41.902916,
+		"lon": 12.453389,
+		"imageURLs": [
+			"img/vatikan/1.jpg",
+			"img/vatikan/2.jpg",
+			"img/vatikan/3.jpg"
+		],
+		"content": "Die Entstehung des Vatikanstaats ist eng mit der historischen Entwicklung der römisch-katholischen Kirche und politischen Veränderungen in Italien verbunden. Der Vatikanstaat wurde offiziell am 11. Februar 1929 durch die Lateranverträge gegründet, die zwischen der Heiligen Stuhl (dem Papst) und dem Königreich Italien unter Mussolini geschlossen wurden. Diese Verträge schufen einen unabhängigen Stadtstaat innerhalb Roms, wodurch der Vatikan seine Souveränität erlangte. Die Fläche des Vatikanstaats ist mit etwa 44 Hektar sehr klein, aber er spielt eine zentrale Rolle im religiösen, kulturellen und politischen Kontext der katholischen Kirche. Der Petersdom und der Petersplatz sind bedeutende Wahrzeichen innerhalb des Vatikans."
+	},
+	{
+		"name": "Marseille",
+		"category": "refugees",
+		"lat": 43.296482,
+		"lon": 5.369780,
+		"imageURLs": [
+			"img/marseille/1.jpg",
+			"img/marseille/2.jpg",
+			"img/marseille/3.jpg"
+		],
+		"content": "Marseille sieht sich mit einer anhaltenden Flüchtlingsproblematik konfrontiert, da die Hafenstadt eine Anlaufstelle für Migranten aus verschiedenen Regionen ist. Die Herausforderungen erstrecken sich über die Unterbringung, Integration und Versorgung dieser Bevölkerungsgruppe. Lokale Ressourcen sind oft überstrapaziert, und die Stadt arbeitet daran, angemessene Lösungen zu finden. Die Flüchtlingsfrage in Marseille reflektiert breitere Diskussionen über Migrationspolitik in Frankreich und Europa. Ein ausgewogenes Vorgehen ist erforderlich, um die Bedürfnisse der Flüchtlinge zu adressieren und gleichzeitig die Herausforderungen für die lokale Gemeinschaft zu bewältigen. In Zusammenarbeit mit nationalen und internationalen Partnern sucht Marseille nach nachhaltigen Strategien, um dieser komplexen Problematik gerecht zu werden."
+	},
+	{
+		"name": "Ceuta",
+		"category": "refugees",
+		"lat": 35.889487,
+		"lon": -5.321345,
+		"imageURLs": [
+			"img/ceuta/1.jpg",
+			"img/ceuta/2.jpg",
+			"img/ceuta/3.jpg"
+		],
+		"content": "Ceuta, eine spanische Exklave in Nordafrika, erlebte wiederholt Migrationswellen. Im Mai 2021 überwanden Tausende Migranten die Grenzzäune, indem sie das Meer durchquerten oder die Grenzen zu Marokko durchbrachen. Dies führte zu Spannungen zwischen Spanien und Marokko. Die Migranten hofften, europäischen Boden zu erreichen, was zu einer Herausforderung für die EU führte. Spanien verstärkte daraufhin seine Grenzkontrollen und die EU diskutierte über gemeinsame Lösungen für die Migrationsfrage. Die Situation in Ceuta verdeutlicht die komplexen Herausforderungen, mit denen die Region und die EU in Bezug auf Migration konfrontiert sind."
+	},
+	{
+		"name": "Belarusflüchtlingsroute",
+		"category": "refugees",
+		"lat": 53.912209403970614,
+		"lon": 27.45308438566231,
+		"imageURLs": [
+			"img/belarus/1.jpg",
+			"img/belarus/2.jpg",
+			"img/belarus/3.jpg"
+		],
+		"content": "Im Jahr 2021 initiierte die Regierung von Alexander Lukaschenko die Belarusflüchtlingsroute, indem sie gezielt Migranten aus dem Nahen Osten anzog, um politischen Druck auf die EU auszuüben. Diese Route nutzte Flugverbindungen nach Minsk und geschickt angepasste Grenzübergänge. Oftmals ohne gültiges Visum gelangten die Migranten über Belarus in die EU, vor allem in Länder wie Litauen, Polen und Lettland. Die EU betrachtet diese Vorgehensweise als eine politisch motivierte Taktik, was zu erheblichen Spannungen zwischen den Parteien führte. Als Reaktion darauf wurden Grenzschutzmaßnahmen verstärkt, und es entstanden Kontroversen über den angemessenen Umgang mit den Migranten. Die angespannte Lage belastet weiterhin die Beziehungen zwischen der EU und Belarus."
+	},
+	{
+		"name": "Austritt Großbritanniens aus der EU",
+		"category": "disadvantages",
+		"lat": 51.502578816087805,
+		"lon": -0.12650325351517244,
+		"imageURLs": [
+			"img/brexit/1.jpg",
+			"img/brexit/2.jpg",
+			"img/brexit/3.jpg"
+		],
+		"content": "Der Austritt Großbritanniens aus der EU, auch bekannt als Brexit, hat mehrere Nachteile für das Land mit sich gebracht. Zunächst führte die Unsicherheit bezüglich Handelsabkommen zu wirtschaftlicher Instabilität und einem Rückgang der Investitionen. Die neuen Zollbestimmungen erschwerten den Handel zwischen Großbritannien und der EU erheblich, was zu Lieferkettenproblemen und höheren Kosten führte. Unternehmen, insbesondere im Finanzsektor, verlagerten Teile ihrer Aktivitäten in die EU, um weiterhin von den Vorteilen des Binnenmarktes zu profitieren. Zudem hat der Brexit Spannungen in Bezug auf Nordirland verstärkt, was zu politischer Unruhe geführt hat. Insgesamt steht Großbritannien vor Herausforderungen, die sich aus der neuen Beziehung zur EU ergeben."
+	},
+	{
+		"name": "Türkei",
+		"category": "disadvantages",
+		"lat": 39.933365,
+		"lon": 32.859741,
+		"imageURLs": [
+			"img/turkey/1.jpg",
+			"img/turkey/2.jpg",
+			"img/turkey/3.jpg"
+		],
+		"content": "Die Türkei hat aufgrund ihrer Nichtmitgliedschaft in der Europäischen Union (EU) mit verschiedenen Nachteilen zu kämpfen. Zunächst einmal gibt es wirtschaftliche Nachteile. Obwohl die Türkei eine Zollunion mit der EU unterhält, hat sie keinen vollen Zugang zum EU-Binnenmarkt.\n\nAls EU-Mitglied könnte die Türkei von den wirtschaftlichen Vorteilen, wie freiem Handel und Investitionen, stärker profitieren. Darüber hinaus bestehen politische Spannungen zwischen der Türkei und der EU, insbesondere in Bezug auf demokratische Werte, Menschenrechte und die türkische Innenpolitik.\n\nDies hat zu diplomatischen Konflikten geführt. Die Visumfreiheit ist ein weiterer Nachteil, da türkische Staatsbürger oft Visa für Reisen in die EU benötigen. Dies stellt eine Hürde für Reisen und Geschäftstreffen dar. Politisch ist die Türkei als Nichtmitglied von einigen EU-Entscheidungen und Diskussionen ausgeschlossen, was zu einer gewissen politischen Isolation führt.\n\nAußerdem erhält die Türkei keine finanzielle Unterstützung aus EU-Fonds und Strukturhilfen, die den Mitgliedstaaten zugutekommen. Schließlich müsste die Türkei als EU-Mitglied ihre Gesetzgebung und Standards an EU-Vorgaben anpassen, was Souveränitätseinschränkungen mit sich bringen würde."
 	}
 ]

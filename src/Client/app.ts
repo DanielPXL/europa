@@ -72,6 +72,10 @@ async function main() {
 		checkIfSidebarShouldBeVisible();
 	});
 
+	window.addEventListener("orientationchange", (e) => {
+		checkIfSidebarShouldBeVisible();
+	});
+
 	checkIfSidebarShouldBeVisible();
 }
 

@@ -69,17 +69,19 @@ body {
 }
 
 #category-container {
-	background: gainsboro;
 	border-radius: 16px;
 	position: absolute;
 	width: 300px;
-	height: 90%;
 	top: 50%;
 	left: 60px;
 	transform: translate(0%, -50%);
 	overflow: hidden;
 	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
 	transition: left 0.25s ease-out;
+}
+
+button {
+	color: black;
 }
 
 #categories {

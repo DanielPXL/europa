@@ -62,6 +62,7 @@ export class ContentPopup {
 
 		this.updateContentImages(poi.imageURLs);
 		this.poiContent.style.left = "50%"
+		this.poiContent.scrollTop = 0;
 
 		this.poiContentText.innerHTML = marked.parse(`## ${poi.name}\n\n${poi.content}`);
 	}

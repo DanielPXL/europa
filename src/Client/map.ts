@@ -1,5 +1,6 @@
 import L from "leaflet";
 import { Category, Color, POIInfo } from "./poi";
+import { aboutPOI } from "./about";
 
 export class GeoMap {
 	constructor(clickCallback: (poi: POIInfo) => void) {
@@ -7,8 +8,12 @@ export class GeoMap {
 		L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 			maxZoom: 18,
 			minZoom: 3,
-			attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors"
+			attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors | <a id=\"about\">Über</a>"
 		}).addTo(this.map);
+
+		(document.getElementById("about") as HTMLAnchorElement).addEventListener("click", () => {
+			clickCallback(aboutPOI);
+		});
 
 		this.clickCallback = clickCallback;
 	}
